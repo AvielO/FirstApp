@@ -1,5 +1,6 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()" #emailForm="ngForm">
+    
     <div class="field">
       <label class="label">Enter Email</label>
       <input [ngClass]="{ 'is-danger': emailControl.invalid && emailControl.touched }" class="input" type="email"
@@ -13,6 +14,7 @@
         </div>
       </ng-container>
     </div>
+
     <button class="button is-primary" [disabled]="emailForm.invalid">
       Submits
     </button>
