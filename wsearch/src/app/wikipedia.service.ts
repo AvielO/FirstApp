@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { pluck } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,8 @@ export class WikipediaService {
         srsearch: term,
         origin: '*'
       }
-    });
+    }).pipe(
+      pluck('query', 'search')
+    )
   }
 }
